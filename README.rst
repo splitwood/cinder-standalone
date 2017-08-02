@@ -46,7 +46,7 @@ List volumes::
 
     cinder \
       --os-user-id userid \
-			--os-project-id projectid \
+      --os-project-id projectid \
       --os-auth-type noauth \
       --os-endpoint \
       http://192.168.122.185:8776/v2 \
@@ -56,7 +56,7 @@ Create a volume::
 
     cinder \
       --os-user-id userid \
-			--os-project-id projectid \
+      --os-project-id projectid \
       --os-auth-type noauth \
       --os-endpoint \
       http://192.168.122.185:8776/v2 \

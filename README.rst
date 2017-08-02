@@ -33,7 +33,6 @@ docker::
 		d65dbb82dc97        tripleoupstream/centos-binary-iscsid:latest             "kolla_start"       26 seconds ago       Up 24 seconds                           iscsid
 		eef11f0637a0        tripleoupstream/centos-binary-mariadb:latest            "kolla_start"       About a minute ago   Up About a minute                       mysql
 		8231c1c3b416        tripleoupstream/centos-binary-rabbitmq:latest           "kolla_start"       2 minutes ago        Up 2 minutes                            rabbitmq
-		93fc4b7901e4        tripleoupstream/centos-binary-heat-all                  "heat-all"          6 minutes ago        Up 6 minutes                            heat_all
 
 Using Cinder
 ============

@@ -1,0 +1,23 @@
+resource_registry:
+  OS::TripleO::Undercloud::Net::SoftwareConfig: /opt/cinder-standalone/tripleo-heat-templates/net-config-noop.yaml
+  OS::TripleO::Services::CinderScheduler: /opt/cinder-standalone/tripleo-heat-templates/docker/services/cinder-scheduler.yaml
+  OS::TripleO::Services::CinderBackup: /opt/cinder-standalone/tripleo-heat-templates/docker/services/cinder-backup.yaml
+  OS::TripleO::Services::CinderVolume: /opt/cinder-standalone/tripleo-heat-templates/docker/services/cinder-volume.yaml
+  OS::TripleO::Services::CinderApi: /opt/cinder-standalone/tripleo-heat-templates/docker/services/cinder-api.yaml
+  OS::TripleO::Services::Iscsid: /opt/cinder-standalone/tripleo-heat-templates/docker/services/iscsid.yaml
+
+parameter_defaults:
+  UndercloudServices:
+    - OS::TripleO::Services::MySQL
+    - OS::TripleO::Services::Apache
+    - OS::TripleO::Services::RabbitMQ
+    - OS::TripleO::Services::CinderApi
+    - OS::TripleO::Services::CinderScheduler
+    - OS::TripleO::Services::CinderVolume
+    - OS::TripleO::Services::Iscsid
+
+  UndercloudExtraConfig:
+    cinder::api::auth_strategy: noauth
+
+  UndercloudNameserver: 8.8.8.8
+  AdminPassword: HnTzjCGP6HyXmWs9FzrdHRxMs

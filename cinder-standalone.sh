@@ -22,6 +22,9 @@ fi
 # Install initial packages
 sudo yum -y install python-tripleoclient docker
 
+# journald must be running for docker
+sudo systemctl start systemd-journald
+sudo systemctl enable systemd-journald
 sudo systemctl start docker
 sudo systemctl enable docker
 

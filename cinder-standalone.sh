@@ -2,6 +2,11 @@
 
 set -eux
 
+# Pin to a known good DLRN repo
+export DELOREAN_REPO_URL=${DELOREAN_REPO_URL:-"https://trunk.rdoproject.org/centos7/50/43/50430300b305015505bddf177fedbc15b43332e3_b25059ec"}
+# Setting CACHEUPLOAD to 1 will also disable pulling from DLRN current
+export CACHEUPLOAD=${CACHEUPLOAD:-"1"}
+
 CURRENT_DIR=$(dirname $0)
 
 sudo setenforce 0
@@ -12,12 +17,15 @@ sudo chown -R $USER: /opt/cinder-standalone
 
 sudo yum -y install git
 
-# Repository setup
 if [ ! -d /opt/cinder-standalone/tripleo-ci ]; then
     git clone https://github.com/openstack-infra/tripleo-ci.git \
         /opt/cinder-standalone/tripleo-ci
 fi
-/opt/cinder-standalone/tripleo-ci/scripts/tripleo.sh --repo-setup
+# Repository setup
+# Only run it if not already done since it is time consuming
+if [ ! -f /etc/yum.repos.d/delorean.repo ]; then
+    /opt/cinder-standalone/tripleo-ci/scripts/tripleo.sh --repo-setup
+fi
 
 # Install initial packages
 sudo yum -y install python-tripleoclient docker

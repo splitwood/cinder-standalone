@@ -3,7 +3,8 @@
 set -eux
 
 # Pin to a known good DLRN repo
-export DELOREAN_REPO_URL=${DELOREAN_REPO_URL:-"https://trunk.rdoproject.org/centos7/50/43/50430300b305015505bddf177fedbc15b43332e3_b25059ec"}
+export DELOREAN_REPO_URL=${DELOREAN_REPO_URL:-"https://trunk.rdoproject.org/centos7/18/42/184244eb4ad0a5bd2e5ea7bc68cfbc2251be9d4d_f4d6532a"}
+
 # Setting CACHEUPLOAD to 1 will also disable pulling from DLRN current
 export CACHEUPLOAD=${CACHEUPLOAD:-"1"}
 

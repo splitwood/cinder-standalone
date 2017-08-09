@@ -13,6 +13,12 @@ Run the installation script::
 
     cinder-standalone/cinder-standalone.sh
 
+By default, the installation will use a loopback mounted LVM backend. To use
+ceph backend instead, run the installation like so::
+
+    cinder-standalone/cinder-standalone.sh -e cinder-standalone/environments/cinder-standalone-ceph.yaml
+
+
 There will be a significant amount of output. When successful, the following
 can be seen towards the end of the output when the command has stopped
 running::

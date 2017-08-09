@@ -80,4 +80,5 @@ time sudo openstack undercloud deploy \
     -e /opt/cinder-standalone/tripleo-heat-templates/environments/mongodb-nojournal.yaml \
     -e $HOME/docker_registry.yaml \
     -e $CURRENT_DIR/environments/cinder-standalone.yaml \
-    $EXTRA_ENVS
+    $EXTRA_ENVS \
+    $@
